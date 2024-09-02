@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#bg{
+background-color: beige;
+height: 350px;
+width: 450px;
+margin-left: 450px;
+margin-top: 80px;
+border-radius: 10px;
+padding-top: 10px;
+padding: 50px;
+}
+.heading{
+    text-align: center;
+
+}
+.box1{
+    margin:20px;
+    padding: 7px;
+    margin-left: 42px;
+}
+.box2{
+    margin:20px;
+    padding: 7px;
+    margin-left: 45px;
+}
+.box3{
+    margin:20px;
+    margin-left: 82px;
+    padding: 7px;
+}
+.box4{
+    margin:20px;
+    padding: 7px;
+}
+.btn{
+    padding: 7px;
+    width: 120px;
+    margin-top: 15px;
+    margin-left: 158px;
+    border-radius: 7px;
+    background-color: lightgrey;
+    color: maroon;
+    font-size: 15px;
+}

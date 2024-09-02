@@ -1,0 +1,106 @@
+<html>
+    <head>
+<link href="style.css" rel="stylesheet"/>
+    </head>
+</html>
+<section id="bg">
+    <h2 class="heading"> FORM </h2>
+<div class="namebox">
+    <label> First Name <span style="color: red;">*</span></label>
+    <input type="text" placeholder="Enter Your First Name" id="firstname" class="box1"/>
+    <span style="display: none;" id="nameerror">First Name is required</span>
+    <span style="display: none;" id="validname">Name should contain atleast 3 character</span>
+</div>
+<div>
+    <label> Last Name <span style="color: red;">*</span></label>
+    <input type="text" placeholder="Enter Your Last Name" id="lastname" class="box2"/>
+    <span style="display: none;" id="lnameerror">Last Name is required</span>
+    <span style="display: none;" id="validlname">Name should contain atleast 3 character</span>
+</div>
+<div>
+    <label> Email<span style="color: red;">*</span></label>
+    <input type="email" placeholder="Enter Your Email" id="email" class="box3"/>
+    <span style="display: none;" id="emailerror">Email is required</span>
+    <span style="display: none;" id="emailpatternerror">Enter valid email</span>
+</div>
+<div>
+    <label> Phone Number <span style="color: red;">*</span></label>
+    <input type="number" placeholder="Enter Your Phone Number" id="Phonenumber" class="box4"/>
+    <span style="display: none;" id="phoneerror">Phone Number is required</span>
+    <span style="display: none;" id="validphonenumber">Enter Valid Phone Number </span>
+</div>
+<div>
+    <input type="button" value="Submit" onclick="demo()" class="btn"/>
+</div>
+</section>
+<script>
+     function demo() {
+        var fname = document.getElementById('firstname').value.trim();
+        var lname = document.getElementById('lastname').value.trim();
+        var uemail = document.getElementById('email').value;
+        var emailpattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        var phone = document.getElementById('Phonenumber').value;
+        var phonenumberpattern = /^\d{10}$/;
+        console.log('------firstname----',fname);
+        console.log('------Lastname----',lname);
+        console.log('------uemail----',uemail);
+       console.log('------phone number------',phone);
+       console.log('----------length of fname----',fname.length);
+       document.getElementById('firstname').style = "border:2px solid green;"
+        if(fname){
+            if(fname.length>=3){
+            document.getElementById('firstname').style = "border:2px solid green;"
+            document.getElementById('validname').style = "display:none;" 
+            }else{
+            document.getElementById('validname').style = "display:block; color:red;"  
+            document.getElementById('firstname').style = "border:2px solid red;"
+            }   
+            document.getElementById('nameerror').style = "display:none;"
+        }else{
+            document.getElementById('firstname').style = "border:2px solid red;"
+            document.getElementById('nameerror').style = "display:block; color:red;"
+        }
+        if(lname){
+            if(lname.length>=3){
+            document.getElementById('lastname').style = "border:2px solid green;"
+            document.getElementById('validlname').style = "display:none;" 
+            }else{
+            document.getElementById('validlname').style = "display:block; color:red;"  
+            document.getElementById('lastname').style = "border:2px solid red;"
+            }   
+            document.getElementById('lnameerror').style = "display:none;"
+        }else{
+            document.getElementById('lastname').style = "border:2px solid red;"
+            document.getElementById('lnameerror').style = "display:block; color:red;"
+        }
+        if(uemail){
+            console.log("----Email check----",emailpattern.test(uemail));
+            if(emailpattern.test(uemail)){
+             document.getElementById('email').style = "border:2px solid green;"
+             document.getElementById('emailpatternerror').style = "display:none;"
+            }
+            else{
+            document.getElementById('emailpatternerror').style = "dispaly:block; color:red;"
+            document.getElementById('email').style = "border:2px solid red;"
+            }
+            document.getElementById('emailerror').style = "display:none;"
+        }else{
+             document.getElementById('emailerror').style = " display:block; color:red;"
+             document.getElementById('email').style = "border:2px solid red;"
+        }
+     if(phone){
+            console.log("----Phone number check----",phonenumberpattern.test(phone));
+           if(phonenumberpattern.test(phone)){
+              document.getElementById('Phonenumber').style = "border:2px solid green;"
+              document.getElementById('validphonenumber').style = "display:none;" 
+            }else{
+              document.getElementById('validphonenumber').style = "display:block; color:red;"  
+              document.getElementById('Phonenumber').style = "border:2px solid red;"
+           }   
+           document.getElementById('phoneerror').style = "display:none;"
+       }else{
+           document.getElementById('Phonenumber').style = "border:2px solid red;"
+           document.getElementById('phoneerror').style = "display:block; color:red;"
+       }
+     }
+</script>
